@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <Toolbar
+        android:id="@+id/toolbar_add_habit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="15dp"
+        android:navigationIcon="@drawable/ic_back_arrow">
+
+        <TextView
+            android:id="@+id/toolbar_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить привычку"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_gravity="center" />
+        
+        <ImageButton
+            android:id="@+id/button_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_delete"
+            android:layout_gravity="end"
+            android:layout_marginEnd="13dp" />
+
+    </Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="30dp">
+
+        <EditText
+            android:id="@+id/et_title_habit"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:inputType="textCapSentences"
+            android:maxLength="35"
+            android:hint="Название"
+            android:textSize="14sp"
+            android:background="@drawable/custom_input"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="12dp"
+            android:elevation="1dp"
+            android:gravity="center"
+            />
+
+        <EditText
+            android:id="@+id/et_desc_habit"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:inputType="textCapSentences"
+            android:maxLength="50"
+            android:hint="Описание"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:padding="12dp"
+            android:elevation="1dp"
+            android:gravity="center"
+            />
+
+        <Spinner
+            android:id="@+id/spinner_priority_habit"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:elevation="1dp"
+            android:spinnerMode="dialog"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:background="@drawable/custom_spinner"
+            android:textAlignment="center"/>
+
+        <RadioGroup
+            android:id="@+id/radio_group_types"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_button_type_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Хорошая"
+                android:buttonTint="@color/black" />
+
+            <RadioButton
+                android:id="@+id/radio_button_type_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Плохая"
+                android:layout_marginStart="20dp"
+                android:buttonTint="@color/black" />
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/et_count"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:inputType="number"
+                android:maxLength="6"
+                android:hint="Кол-во выполнений"
+                android:textSize="12sp"
+                android:background="@drawable/custom_input"
+                android:padding="12dp"
+                android:elevation="1dp"
+                android:gravity="center"
+                />
+
+            <EditText
+                android:id="@+id/et_period"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:inputType="number"
+                android:maxLength="6"
+                android:hint="Кол-во дней"
+                android:textSize="13sp"
+                android:background="@drawable/custom_input"
+                android:padding="12dp"
+                android:elevation="1dp"
+                android:layout_marginStart="15dp"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выберите цвет привычки:"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <RadioGroup
+                android:id="@+id/radio_group_colors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            </RadioGroup>
+
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/button_add_habit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:text="Добавить привычку"
+            android:textColor="@color/white"
+            android:background="@color/black" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+</ScrollView>

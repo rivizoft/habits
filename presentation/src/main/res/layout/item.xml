@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F8F8F8"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:src="@drawable/rectangle_background"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="11dp"
+            android:layout_marginTop="11dp"/>
+
+        <ImageView
+            android:id="@+id/iv_color_picker"
+            android:layout_width="30dp"
+            android:layout_height="70dp"
+            android:src="@drawable/color_picker_rectangle"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="11dp"/>
+
+        <TextView
+            android:id="@+id/tv_title_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Название"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginTop="27dp"
+            android:layout_toEndOf="@id/iv_color_picker"
+            android:layout_marginEnd="55dp"/>
+        
+        <TextView
+            android:id="@+id/tv_describe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Описание"
+            android:textSize="12sp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_below="@id/tv_title_card"
+            android:layout_toEndOf="@id/iv_color_picker"
+            android:layout_marginEnd="55dp" />
+
+        <ImageButton
+            android:id="@+id/button_done"
+            android:layout_width="40dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_done"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="11dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </RelativeLayout>
+
+</GridLayout>
