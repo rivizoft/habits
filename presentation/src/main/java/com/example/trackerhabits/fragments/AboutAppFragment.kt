@@ -8,7 +8,7 @@ import android.view.ViewGroup
 
 import com.example.trackerhabits.R
 
-class AboutAppFragment : Fragment() {
+class AboutAppFragment() : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,

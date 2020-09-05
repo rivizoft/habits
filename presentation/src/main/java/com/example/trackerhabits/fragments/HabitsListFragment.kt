@@ -25,7 +25,7 @@ import com.example.trackerhabits.viewModels.HabitsViewModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import javax.inject.Inject
 
-class HabitsListFragment(private val typeOfHabits: HabitType) : Fragment()
+class HabitsListFragment() : Fragment()
 {
     private var recyclerList: RecyclerView? = null
 
@@ -33,13 +33,23 @@ class HabitsListFragment(private val typeOfHabits: HabitType) : Fragment()
     private lateinit var mRecyclerAdapter: HabitsAdapter
     private lateinit var mSearchEditText: EditText
 
+    private lateinit var typeOfHabits: HabitType
+
     @Inject
     lateinit var habitIntercept: HabitIntercept
 
     companion object
     {
-        fun getInstance(typeOfHabits: HabitType): HabitsListFragment =
-            HabitsListFragment(typeOfHabits)
+        fun getInstance(typeOfHabits: HabitType): HabitsListFragment
+        {
+            val bundle = Bundle().apply {
+                putSerializable("typeOfHabits", typeOfHabits)
+            }
+
+            return HabitsListFragment().apply {
+                arguments = bundle
+            }
+        }
     }
 
     override fun onCreateView(inflater: LayoutInflater,
@@ -56,6 +66,8 @@ class HabitsListFragment(private val typeOfHabits: HabitType) : Fragment()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        typeOfHabits = arguments?.getSerializable("typeOfHabits") as HabitType
 
         mRecyclerAdapter = HabitsAdapter()
         recyclerList?.adapter = mRecyclerAdapter

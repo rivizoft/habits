@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.activity_add_habit.view.*
 import java.util.*
 import javax.inject.Inject
 
-class AddOrEditHabitFragment : Fragment() {
+class AddOrEditHabitFragment() : Fragment() {
 
     private val colors = arrayOf(
         "#FF5722",

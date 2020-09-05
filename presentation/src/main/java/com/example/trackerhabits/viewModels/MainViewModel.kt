@@ -58,12 +58,6 @@ class MainViewModel(application: Application,
                         if (!found)
                             habitIntercept.addHabitToDb(serverHabit)
                     }
-
-//                val habitsListFromServer = habitIntercept.getListHabitsFromServer()
-//                for (habit in habitsListFromServer!!) {
-//                    habitIntercept.deleteHabitFromServer(habit)
-//                }
-//                Log.i("FinishDeleted", "All habits on server was delete")
                 }
             }
         }

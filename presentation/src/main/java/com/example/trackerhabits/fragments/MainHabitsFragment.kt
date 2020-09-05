@@ -40,8 +40,8 @@ class MainHabitsFragment : Fragment() {
 
         //Setting Tab Layout
         val viewPagerAdapter = ViewPagerAdapter(childFragmentManager)
-        viewPagerAdapter.addFragment(HabitsListFragment.getInstance(com.example.domain.HabitType.GOOD), "Хорошие")
-        viewPagerAdapter.addFragment(HabitsListFragment.getInstance(com.example.domain.HabitType.BAD), "Плохие")
+        viewPagerAdapter.addFragment(HabitsListFragment.getInstance(HabitType.GOOD), "Хорошие")
+        viewPagerAdapter.addFragment(HabitsListFragment.getInstance(HabitType.BAD), "Плохие")
         viewPager.adapter = viewPagerAdapter
         tabLayout.setupWithViewPager(viewPager)
     }

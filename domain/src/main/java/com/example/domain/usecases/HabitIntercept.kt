@@ -76,14 +76,25 @@ class HabitIntercept(private val habitsLocalRepository: HabitsLocalRepository,
                 if (habit.count == 0)
                     "Хватит это делать!"
                 else
-                    "Можете выполнить еще ${habit.count} раз"
+                    "Можете выполнить еще ${habit.count} ${getDeclensionOfWord(habit.count)}"
             }
             HabitType.GOOD -> {
                 if (habit.count == 0)
                     "You are breathtaking!"
                 else
-                    "Стоит выполнить еще ${habit.count} раз"
+                    "Стоит выполнить еще ${habit.count} ${getDeclensionOfWord(habit.count)}"
             }
+        }
+    }
+
+    private fun getDeclensionOfWord(number: Int): String
+    {
+        val div = number % 10
+
+        return when {
+            number in 10..20 -> "раз"
+            div in 2..4 -> "раза"
+            else -> "раз"
         }
     }
 }

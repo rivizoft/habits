@@ -1,6 +1,8 @@
 package com.example.domain
 
-enum class HabitType(val value: Int)
+import java.io.Serializable
+
+enum class HabitType(val value: Int): Serializable
 {
     GOOD(0),
     BAD(1)
